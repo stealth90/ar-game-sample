@@ -1,8 +1,9 @@
 import React from 'react';
-import './App.css';
+import { RouterProvider } from 'react-router-dom';
+import router from './routes';
 
 const App = (): JSX.Element => {
-  return <div className="App"></div>;
+  return <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />;
 };
 
 export default App;

@@ -1,0 +1,23 @@
+@use '../../theme/variables' as *;
+
+.permission-denied {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  &__word {
+    color: $primary-color;
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+    text-align: center;
+    font-size: 2.25rem;
+    &.blue {
+      color: $secondary-color;
+      font-size: 3.25rem;
+    }
+  }
+}

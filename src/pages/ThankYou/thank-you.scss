@@ -1,0 +1,87 @@
+@use '../../theme/variables' as *;
+
+.thank-you {
+  background-color: $primary-color;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  &>:first-child{
+    margin-top: auto;
+  }
+  &>:last-child{
+    margin-bottom: auto;
+  }
+  &__text {
+    z-index: 1;
+  }
+  &__image {
+    width: 80%;
+    margin: auto 0;
+    z-index: 1;
+    transform: translateZ(0);
+     -webkit-transform: translateZ(0);
+  }
+  &__congrats {
+    color: $secondary-color;
+    text-align: center;
+    font-family: $primary-font;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    span {
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+  &__points {
+    color: $white;
+    text-align: center;
+    font-family: $primary-font;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  &__ellipse {
+    width: 150vw;
+    height: 50dvh;
+    flex-shrink: 0;
+    background-color: $secondary-color;
+    border-radius: 50%;
+    position: fixed;
+    bottom: -10%;
+    z-index: 0;
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    z-index: 1;
+  }
+  &__button.ks-button .button.size-md {
+    width: 16.375rem;
+    height: 3.125rem;
+    padding: 1rem 1.75rem;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    font-family: $primary-font;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  &__button.ks-button.blue .button.size-md {
+    background-color: $primary-color;
+  }
+  &__button.ks-button.play .button.primary.hollow {
+    border: 1px solid $white;
+  }
+}

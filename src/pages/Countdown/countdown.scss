@@ -1,0 +1,19 @@
+@use '../../theme/variables' as *;
+
+.countdown {
+  background-color: $primary-color;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__logo{
+    position: absolute;
+    top: 2.25rem;
+  }
+
+  &__fireworks {
+    width: 20.04644rem;
+    height: 7.633rem;
+  }
+}

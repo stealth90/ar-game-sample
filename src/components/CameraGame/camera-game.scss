@@ -1,0 +1,12 @@
+.camera-game {
+  position: fixed;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  &__loading{
+    margin: auto;
+  }
+  &__loader{
+    font-size: 2rem;
+  }
+}

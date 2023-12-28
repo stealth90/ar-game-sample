@@ -1,0 +1,37 @@
+@use '../../theme/variables' as *;
+@use '../../theme/animations.scss';
+
+.countdown-text {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  height: 15rem;
+  @extend .zoomIn;
+    animation-duration: 500ms;
+  &__seconds {
+    color: $white;
+    text-align: center;
+    font-family: $primary-font;
+    font-size: 20rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 15rem;
+    margin: 0;
+    @extend .zoomIn;
+    animation-duration: 500ms;
+  }
+  &__word {
+    color: $white;
+    font-family: $primary-font;
+    font-size: 3.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+    &.blue {
+      color: $secondary-color;
+      font-size: 2.25rem;
+    }
+  }
+}

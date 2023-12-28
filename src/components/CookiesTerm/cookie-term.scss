@@ -1,0 +1,43 @@
+@use '../../theme/variables' as *;
+
+.cookies-term {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 19.875rem;
+  position: sticky;
+  margin: 1rem 0;
+  gap: 0.5rem;
+  &__title {
+    color: $secondary-color;
+    text-align: center;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0.875rem;
+    margin: 0;
+  }
+  &__description {
+    color: $secondary-color;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0.875rem;
+    margin: 0;
+    text-align: center;
+  }
+  &__link-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    &__link,
+    &__divider {
+      color: $secondary-color;
+      text-align: center;
+      font-size: 0.625rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 0.875rem;
+    }
+  }
+}
