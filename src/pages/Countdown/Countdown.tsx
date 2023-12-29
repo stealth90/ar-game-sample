@@ -15,7 +15,7 @@ const Countdown: React.FC<RouteProps> = () => {
     if (time === 0) {
       setTimeout(() => {
         navigate('/game');
-      }, 1000);
+      }, 900);
     }
   }, [time, navigate]);
 
