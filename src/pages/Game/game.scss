@@ -27,7 +27,8 @@
   &__logo {
     width: 13.375rem;
     height: 3.3125rem;
-    margin-bottom: 2rem;
+    position: fixed;
+    bottom: 2rem;
     z-index: 1;
   }
 }

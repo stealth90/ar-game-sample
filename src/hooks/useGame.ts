@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react';
-import { useCountdown } from './useCountdown';
+import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useCountdown } from './useCountdown';
 
 export const useGame = (gameDuration: number) => {
+  const navigate = useNavigate();
   const [points, setPoints] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
-  const navigate = useNavigate();
   const { time, startCountdown } = useCountdown(gameDuration, false);
 
   useEffect(() => {
     if (gameStarted) {
       startCountdown();
     }
-  }, [gameStarted]);
+  }, [gameStarted, startCountdown]);
 
   const endGame = () => {
     window.sessionStorage.setItem('points', Math.floor(Math.random() * 10).toString());
@@ -40,9 +40,9 @@ export const useGame = (gameDuration: number) => {
     ];
   };
 
-  const startGame = () => {
+  const startGame = useCallback(() => {
     setGameStarted(true);
-  };
+  }, []);
 
   return {
     gameStarted,

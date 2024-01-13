@@ -12,7 +12,6 @@ export const useCamera = (gameDuration: number) => {
           video: { facingMode: 'user' },
         })
         .then((stream) => {
-          console.log({stream});
           if (stream.active) {
             setStream(stream);
             setIsChecking(false);
@@ -21,16 +20,20 @@ export const useCamera = (gameDuration: number) => {
           setTimeout(() => {
             const tracks = stream.getTracks();
             tracks[0].stop();
-          }, gameDuration);
+          }, gameDuration * 1000);
         })
-        .catch(() => {
+        .catch((e) => {
+          console.error(`Error ${e}`);
           setStatus('denied');
         })
         .finally(() => {
           setIsChecking(false);
         });
+    } else {
+      setIsChecking(false);
+      setStatus('notfound');
     }
-  }, []);
+  }, [gameDuration]);
 
   return { isChecking, status, stream };
 };

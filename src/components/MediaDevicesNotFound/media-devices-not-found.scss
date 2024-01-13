@@ -1,0 +1,32 @@
+@use '../../theme/variables' as *;
+
+.media-devices-not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  &__word {
+    color: $primary-color;
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+    text-align: center;
+    font-size: 2.25rem;
+    &.blue {
+      color: $secondary-color;
+      font-size: 3.25rem;
+    }
+  }
+  &__link{
+    margin-top: 1rem;
+    border: 1px solid $primary-color;
+    border-radius: 5rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: $white;
+    z-index: 3;
+  }
+}

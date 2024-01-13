@@ -6,13 +6,17 @@ export const useCountdown = (initialSeconds: number, autoPlay = true) => {
 
   const startCountdown = useCallback(() => {
     const timer = setInterval(() => {
-      setSeconds((prevSeconds) => prevSeconds - 1);
-      if (seconds <= 0) {
+      let currentSeconds = initialSeconds;
+      setSeconds((prevSeconds) => {
+        currentSeconds = prevSeconds;
+        return prevSeconds - 1;
+      });
+      if (currentSeconds <= 0) {
         clearInterval(timer);
       }
     }, 1000);
     timerRef.current = timer;
-  }, []);
+  }, [initialSeconds]);
 
   useEffect(() => {
     if (autoPlay) {

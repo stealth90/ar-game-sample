@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useCamera } from '../../hooks/useCamera';
 import PermissionDenied from '../PermissionDenied';
+import MediaDevicesNotFound from '../MediaDevicesNotFound';
 import Loader from '../Loader';
 import './camera-game.scss';
 
@@ -21,8 +22,12 @@ const CameraGame: React.FC<CameraGameProps> = ({ onVideoLoaded, gameDuration }) 
     );
   }
 
-  if (status !== 'agree') {
+  if (status === "denied") {
     return <PermissionDenied />;
+  }
+
+  if (status === "notfound" ) {
+    return <MediaDevicesNotFound />;
   }
 
   if (stream && videoRef.current) {
